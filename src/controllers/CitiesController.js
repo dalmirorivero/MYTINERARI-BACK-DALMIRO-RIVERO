@@ -27,11 +27,11 @@ const citiesManager = {
             const { id } = ( req.params )
             const city = await City.findById(id)
             if (city){
-            res.status(201).json( { response : city } )}
-            else {
-            res.status(404).json({
-                success: false,
-                message: 'City id not found!'
+                res.status(201).json( { response : city } )
+            } else {
+                res.status(404).json({
+                    success: false,
+                    message: 'City id not found!'
             })}
         } catch (error) {
             next(error)
