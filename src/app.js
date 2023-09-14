@@ -3,8 +3,8 @@ import express from "express";
 import cors from "cors";
 import "./config/database.js"
 import indexRouter from "./router/index.router.js";
-import notFoundHandler from "./middlewares/notFoundHandler.js";
 import errorHandler from "./middlewares/errorHandler.js";
+import notFoundHandler from "./middlewares/notFoundHandler.js";
 
 const app = express();
 
@@ -16,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded ({extended: true}));
 
-app.use('/api', indexRouter)
-app.use(notFoundHandler)
-app.use(errorHandler)
+app.use('/api', indexRouter);
+
+app.use(notFoundHandler);
+app.use(errorHandler);

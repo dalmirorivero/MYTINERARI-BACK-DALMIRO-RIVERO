@@ -1,4 +1,4 @@
-import { model,Schema,Types } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 
 const collection = 'itineraries'
 
@@ -10,7 +10,10 @@ const schema = new Schema ({
     comment: {type: String},
     user_id: {type: Types.ObjectId, ref: 'users', required: true},
     city_id: {type: Types.ObjectId, ref: 'cities', required: true}
-})
+},
+{
+    timestamps: true
+});
 
 const Itinerary = model(collection,schema);
 export default Itinerary;
